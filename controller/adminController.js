@@ -18,8 +18,8 @@ exports.contactEmail = async (req, res) => {
             to: email,
             subject: "Thanks for contacting",
             message: `Hello ${req.body.subject} \n \n  Thank Your for reaching out! Your message has been received. \n \n
-                Mobile No:74981870
-                \n \n I'll get back to you soon!    \n Best Regards SHUBHAM TUPE😎 `
+                Mobile No:9529980139
+                \n \n I'll get back to you soon!    \n Best Regards Sachin Bedke `
         })
         if (x && y) {
             await Email.create(req.body)
