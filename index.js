@@ -8,7 +8,7 @@ mongoose.connect(process.env.MONGO_URL)
 const app = express()
 
 app.use(express.static(path.join(__dirname, "dist")))
-// app.use(express.static("uploads"))
+app.use(express.static("uploads"))
 
 app.use(cors())
 app.use(express.json())
