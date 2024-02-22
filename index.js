@@ -7,9 +7,10 @@ require("dotenv").config({ path: "./.env" })
 mongoose.connect(process.env.MONGO_URL)
 const app = express()
 
-app.use(express.static(path.join(__dirname, "dist")))
+// app.use(express.static(path.join(__dirname, "dist")))
+app.use(express.static("uploads"))
 
-app.use(cors())
+app.use(cors({ origin: "http://localhost:5173", credentials: true }))
 app.use(express.json())
 app.use("/api/admin", require("./routes/adminRoute"))
 
