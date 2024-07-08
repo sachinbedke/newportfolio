@@ -7,9 +7,6 @@ const path = require("path")
 
 
 exports.contactEmail = async (req, res) => {
-
-
-    console.log(req.body);
     try {
         const { subject, name, email, message } = req.body
         const x = await sendEmail({
@@ -54,7 +51,7 @@ exports.addProject = async (req, res) => {
             return res.json({ message: err.message || "unble to upload" })
         }
         const rese = await Projects.create({ ...req.body, hero: req.file.filename })
-        res.status(200).json({ message: " Project Add Success", rese })
+        res.status(200).json({ message: "Project Add Success", rese })
     })
 
 }
@@ -70,7 +67,7 @@ exports.deleteProject = async (req, res) => {
 
     await fs.unlink(path.join(__dirname, "..", "uploads", result.hero))
     await Projects.findByIdAndDelete(id)
-    res.status(200).json({ message: " Project Delete Success" })
+    res.status(200).json({ message: "Project Delete Success" })
 }
 exports.updateProject = async (req, res) => {
     upload(req, res, async err => {

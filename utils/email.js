@@ -36,8 +36,7 @@ const sendEmail = ({
     to = process.env.FROM_EMAIL,
     message = "test email",
     subject = "test subject"
-}
-) => new Promise((resole, reject) => {
+}) => new Promise((resole, reject) => {
     try {
         const miler = nodemailer.createTransport({
             service: "gmail",
@@ -45,13 +44,12 @@ const sendEmail = ({
                 user: process.env.FROM_EMAIL,
                 pass: process.env.EMAIL_PASS,
             },
-
+m 
         });
         console.log(to);
         miler.sendMail({
             to,
             subject,
-
             text: message,
             from: process.env.FROM_EMAIL
         }, (err) => {
